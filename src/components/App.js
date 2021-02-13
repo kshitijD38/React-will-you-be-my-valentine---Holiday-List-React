@@ -39,10 +39,6 @@ function App() {
     { name: "Tirupati", country: "India" }
   ];
 
-  var newList = cityList.filter(function (ele) {
-    return ele.country === "India";
-  });
-
   let i = 1;
   var result = cityList.map(function (el) {
     var o = Object.assign({}, el);
