@@ -56,11 +56,11 @@ function App() {
 //   console.log(result);
   return (
     <div id="main">
-      <ul>
+      <ol>
         {result.map((item) => (
           <li key={item.key}>{item.name}</li>
         ))}
-      </ul>
+      </ol>
     </div>
   );
 }
