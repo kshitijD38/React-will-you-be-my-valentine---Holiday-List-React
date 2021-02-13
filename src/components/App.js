@@ -44,20 +44,24 @@ function App() {
   });
 
   let i = 1;
-  var result = newList.map(function (el) {
+  var result = cityList.map(function (el) {
     var o = Object.assign({}, el);
     o.key = "location" + i;
     i++;
     return o;
   });
 
+  var newList = result.filter(function (ele) {
+    return ele.country === "India";
+  });
+
 //   console.log(cityList);
-//   console.log(newList);
 //   console.log(result);
+//   console.log(newList);
   return (
     <div id="main">
       <ol>
-        {result.map((item) => (
+        {newList.map((item) => (
           <li key={item.key}>{item.name}</li>
         ))}
       </ol>
