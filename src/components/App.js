@@ -2,49 +2,67 @@
 import React, { Component, useState } from "react";
 import '../styles/App.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props)
+// import "./styles.css";
 
-    this.cityList = [{ name: 'Goa', country: 'India' },
-    { name: 'Amsterdam', country: 'Netherlands' },
-    { name: 'New York', country: 'USA' },
-    { name: 'Darjeeling', country: 'India' },
-    { name: 'Tokyo', country: 'Japan' },
-    { name: 'Lonavala', country: 'India' },
-    { name: 'Brandenburg Gate', country: 'Germany' },
-    { name: 'Reichstag Building', country: 'Germany' },
-    { name: 'Museum Island', country: 'Germany' },
-    { name: 'Munnar', country: 'India' },
-    { name: 'Leh Ladakh', country: 'India' },
-    { name: 'Goa', country: 'India' },
-    { name: 'Agra', country: 'India' },
-    { name: 'Dalhousie', country: 'India' },
-    { name: 'Coorg', country: 'India' },
-    { name: 'Rome', country: 'Italy' },
-    { name: 'Milan', country: 'Italy' },
-    { name: 'Venice', country: 'Italy' },
-    { name: 'Varanasai', country: 'India' },
-    { name: 'Jaipur', country: 'India' },
-    { name: 'The Hofburg', country: 'Austria' },
-    { name: 'Belvedere Palace', country: 'Austria' },
-    { name: 'St. Stephen Cathedral', country: 'Austria' },
-    { name: 'Kahna National Park', country: 'India' },
-    { name: 'Amritsar', country: 'India' },
-    { name: 'Mussoorie', country: 'India' },
-    { name: 'Mount Abu', country: 'India' },
-    { name: 'Tirupati', country: 'India' },
-    ]
-  }
+// import React, { Component, useState } from "react";
+// import '../styles/App.css';
 
-  render() {
-    return (
-      <div id="main">
-        {/* Do not remove the main div */}
-      </div>
-    )
-  }
+function App() {
+  var cityList = [
+    { name: "Goa", country: "India" },
+    { name: "Amsterdam", country: "Netherlands" },
+    { name: "New York", country: "USA" },
+    { name: "Darjeeling", country: "India" },
+    { name: "Tokyo", country: "Japan" },
+    { name: "Lonavala", country: "India" },
+    { name: "Brandenburg Gate", country: "Germany" },
+    { name: "Reichstag Building", country: "Germany" },
+    { name: "Museum Island", country: "Germany" },
+    { name: "Munnar", country: "India" },
+    { name: "Leh Ladakh", country: "India" },
+    { name: "Goa", country: "India" },
+    { name: "Agra", country: "India" },
+    { name: "Dalhousie", country: "India" },
+    { name: "Coorg", country: "India" },
+    { name: "Rome", country: "Italy" },
+    { name: "Milan", country: "Italy" },
+    { name: "Venice", country: "Italy" },
+    { name: "Varanasai", country: "India" },
+    { name: "Jaipur", country: "India" },
+    { name: "The Hofburg", country: "Austria" },
+    { name: "Belvedere Palace", country: "Austria" },
+    { name: "St. Stephen Cathedral", country: "Austria" },
+    { name: "Kahna National Park", country: "India" },
+    { name: "Amritsar", country: "India" },
+    { name: "Mussoorie", country: "India" },
+    { name: "Mount Abu", country: "India" },
+    { name: "Tirupati", country: "India" }
+  ];
+
+  var newList = cityList.filter(function (ele) {
+    return ele.country === "India";
+  });
+
+  let i = 1;
+  var result = newList.map(function (el) {
+    var o = Object.assign({}, el);
+    o.key = "location" + i;
+    i++;
+    return o;
+  });
+
+//   console.log(cityList);
+//   console.log(newList);
+//   console.log(result);
+  return (
+    <div id="main">
+      <ul>
+        {result.map((item) => (
+          <li key={item.key}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
-
 
 export default App;
