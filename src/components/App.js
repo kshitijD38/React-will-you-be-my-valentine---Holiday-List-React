@@ -39,26 +39,60 @@ function App() {
     { name: "Tirupati", country: "India" }
   ];
 
+  var newList = cityList.filter(function (ele) {
+    return (
+      ele.country === "India" /*  && newList.includes(ele.name) === false */
+    );
+  });
+
+  let unique = [...new Set(newList.map((item) => item.name))];
+  /*var unique = []; 
+  newList.map((elem) => {
+    if (unique.indexOf(elem.name) === -1) {
+      unique.push(elem.name);
+    }
+  }); */
+
   let i = 1;
-  var result = cityList.map(function (el) {
+  var result = unique.map(function (el) {
     var o = Object.assign({}, el);
     o.key = "location" + i;
     i++;
     return o;
   });
 
-  var newList = result.filter(function (ele) {
-    return ele.country === "India";
-  });
-
 //   console.log(cityList);
-//   console.log(result);
 //   console.log(newList);
+//   console.log(unique);
+//   console.log(result);
+
   return (
     <div id="main">
       <ol>
-        {newList.map((item) => (
-          <li key={item.key}>{item.name}</li>
+        {result.map((item) => (
+          <li key={item.key}>
+            {item[0]}
+            {item[1]}
+            {item[2]}
+            {item[3]}
+            {item[4]}
+            {item[5]}
+            {item[6]}
+            {item[7]}
+            {item[8]}
+            {item[9]}
+            {item[10]}
+            {item[11]}
+            {item[12]}
+            {item[13]}
+            {item[14]}
+            {item[15]}
+            {item[16]}
+            {item[17]}
+            {item[18]}
+            {item[19]}
+          </li>
+          // <li key={item.key}>{item.map((i)=>({i}))}</li>
         ))}
       </ol>
     </div>
@@ -66,3 +100,4 @@ function App() {
 }
 
 export default App;
+
