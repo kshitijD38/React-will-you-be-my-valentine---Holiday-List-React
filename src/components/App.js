@@ -39,13 +39,17 @@ function App() {
     { name: "Tirupati", country: "India" }
   ];
 
-  var newList = cityList.filter(function (ele) {
-    return (
-      ele.country === "India" /*  && newList.includes(ele.name) === false */
-    );
+  var newList1 = cityList.filter(function (ele) {
+    return ele.country === "India";
   });
 
-  let unique = [...new Set(newList.map((item) => item.name))];
+  var newList2 = cityList.filter(function (ele) {
+    return ele.country !== "India";
+  });
+
+  var combList = [...newList1, ...newList2];
+
+  let unique = [...new Set(combList.map((item) => item.name))];
   /*var unique = []; 
   newList.map((elem) => {
     if (unique.indexOf(elem.name) === -1) {
