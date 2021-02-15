@@ -57,13 +57,13 @@ function App() {
     }
   }); */
 
-  let i = 1;
-  var result = unique.map(function (el) {
-    var o = Object.assign({}, el);
-    o.key = "location" + i;
-    i++;
-    return o;
-  });
+//   let i = 1;
+//   var result = unique.map(function (el) {
+//     var o = Object.assign({}, el);
+//     o.key = "location" + i;
+//     i++;
+//     return o;
+//   });
 
 //   console.log(cityList);
 //   console.log(newList);
@@ -73,8 +73,8 @@ function App() {
   return (
     <div id="main">
       <ol>
-        {result.map((item) => (
-          <li key={item.key}>
+        {unique.map((item, index) => (
+          <li key={`location${index + 1}`}>
             {item[0]}
             {item[1]}
             {item[2]}
