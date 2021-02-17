@@ -69,35 +69,46 @@ function App() {
 //   console.log(newList);
 //   console.log(unique);
 //   console.log(result);
+  
+  function showCity() {
+    let new_city = cityList.filter((location) => {
+      if (location.country === "India") return location;
+    });
+    let result = new_city.map((city, index) => (
+      <li key={`location${index + 1}`}>{city.name}</li>
+    ));
+    return result;
+  }
 
   return (
     <div id="main">
       <ol>
-        {unique.map((item, index) => (
-          <li key={`location${index + 1}`}>
-            {item[0]}
-            {item[1]}
-            {item[2]}
-            {item[3]}
-            {item[4]}
-            {item[5]}
-            {item[6]}
-            {item[7]}
-            {item[8]}
-            {item[9]}
-            {item[10]}
-            {item[11]}
-            {item[12]}
-            {item[13]}
-            {item[14]}
-            {item[15]}
-            {item[16]}
-            {item[17]}
-            {item[18]}
-            {item[19]}
-          </li>
+        {showCity()}
+//         {unique.map((item, index) => (
+//           <li key={`location${index + 1}`}>
+//             {item[0]}
+//             {item[1]}
+//             {item[2]}
+//             {item[3]}
+//             {item[4]}
+//             {item[5]}
+//             {item[6]}
+//             {item[7]}
+//             {item[8]}
+//             {item[9]}
+//             {item[10]}
+//             {item[11]}
+//             {item[12]}
+//             {item[13]}
+//             {item[14]}
+//             {item[15]}
+//             {item[16]}
+//             {item[17]}
+//             {item[18]}
+//             {item[19]}
+//           </li>
           // <li key={item.key}>{item.map((i)=>({i}))}</li>
-        ))}
+//         ))}
       </ol>
     </div>
   );
