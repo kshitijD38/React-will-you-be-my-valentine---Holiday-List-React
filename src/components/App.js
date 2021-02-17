@@ -5,7 +5,7 @@ import "../styles/App.css";
 
 // import React, { Component, useState } from "react";
 // import '../styles/App.css';
-
+// Goa(India), Amsterdam(Netherlands), New York(USA), Darjeeling(India), Tokyo(Japan), Lonavala(India)
 function App() {
   var cityList = [
     { name: "Goa", country: "India" },
@@ -13,8 +13,8 @@ function App() {
     { name: "New York", country: "USA" },
     { name: "Darjeeling", country: "India" },
     { name: "Tokyo", country: "Japan" },
-    { name: "Lonavala", country: "India" },
-    { name: "Brandenburg Gate", country: "Germany" },
+    { name: "Lonavala", country: "India" }
+    /* { name: "Brandenburg Gate", country: "Germany" },
     { name: "Reichstag Building", country: "Germany" },
     { name: "Museum Island", country: "Germany" },
     { name: "Munnar", country: "India" },
@@ -35,7 +35,7 @@ function App() {
     { name: "Amritsar", country: "India" },
     { name: "Mussoorie", country: "India" },
     { name: "Mount Abu", country: "India" },
-    { name: "Tirupati", country: "India" }
+    { name: "Tirupati", country: "India" } */
   ];
 
   /* var newList1 = cityList.filter(function (ele) {
